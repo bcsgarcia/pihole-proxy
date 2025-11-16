@@ -1,0 +1,10 @@
+services:
+  pihole-proxy:
+    build: .
+    container_name: pihole-proxy
+    restart: unless-stopped
+    ports:
+      - "5555:5555"
+    network_mode: host
+    env_file:
+      - .env
